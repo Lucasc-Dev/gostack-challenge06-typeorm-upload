@@ -3,7 +3,7 @@ import {MigrationInterface, QueryRunner, Table} from "typeorm";
 export default class CreateCategories1593952819884 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        queryRunner.createTable(
+        await queryRunner.createTable(
             new Table({
                 name: 'categories',
                 columns: [
@@ -34,7 +34,7 @@ export default class CreateCategories1593952819884 implements MigrationInterface
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        queryRunner.dropTable('categories');
+        await queryRunner.dropTable('categories');
     }   
 
 }
